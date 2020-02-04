@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Progress bar</title>
+
+    <style>
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #progress-bar {
+        width: 300px;
+        height: 20px;
+        background-color: #ddd;
+      }
+      .greenbar {
+        background-color: darkgreen;
+        height: 100%;
+        transition: width 2s linear;
+        width: 0%;
+      }
+    </style>
+
+    <script>
+      function fillBar(seconds) {
+        const bar = document.querySelector(".greenbar");
+        bar.style.transition = `${seconds} linear`;
+        bar.style.width = "100%";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="progress-bar">
+        <div class="greenbar"></div>
+        <button onclick="fillBar(2)">Start</button>
+      </div>
+    </div>
+  </body>
+</html>
